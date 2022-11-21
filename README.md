@@ -22,8 +22,10 @@ https://documenter.getpostman.com/view/5768800/2s8YmUKzTA
 ## Endpoint
 https://2pzmat28y7.execute-api.us-east-1.amazonaws.com
 
-  POST - https://el8wphj509.execute-api.us-east-1.amazonaws.com/create
-  GET - https://el8wphj509.execute-api.us-east-1.amazonaws.com/validate
+  ### POST
+  https://el8wphj509.execute-api.us-east-1.amazonaws.com/create
+  ### GET
+  https://el8wphj509.execute-api.us-east-1.amazonaws.com/validate
 
 ## Additional
 https://docs.google.com/document/d/144jK4WvP2NBGKcDPW8rWsMLUMOEbqWhBTuNxh_oZgyc/edit?usp=sharing
