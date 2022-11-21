@@ -3,16 +3,14 @@ import { connect } from 'mongoose';
 import { MongoDbConfig } from '../../config/db';
 
 export class MongoDbService implements MongoDbServiceInterface {
-  public config: MongoDbConfig;
+  public config: MongoDbConfig = new MongoDbConfig();
 
   constructor() {
-    this.config = new MongoDbConfig();
     this.config.load();
   }
 
   connect(): void {
-    const con = connect(this.config.mongoUrl);
-    con
+    connect(this.config.mongoUrl)
       .then(() => {
         console.log('[+] Database connected with Atlas Cluster');
         return true;
