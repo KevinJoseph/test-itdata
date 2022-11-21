@@ -1,4 +1,4 @@
-# Serverless Node.js Typescript - TestapiREST
+# AWS Node.js Typescript - TestapiREST
 
 This project implements an apiREST whit hexagonal architecture.
 
