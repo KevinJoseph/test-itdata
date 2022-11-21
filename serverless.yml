@@ -19,6 +19,12 @@ functions:
       - httpApi:
           path: /create
           method: post
+  validateToken:
+    handler: src/handlers/handlerValidateToken.validate
+    events:
+      - httpApi:
+          path: /validate
+          method: get
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
