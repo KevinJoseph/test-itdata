@@ -13,7 +13,12 @@ functions:
       - httpApi:
           path: /hello
           method: get
-
+  createToken:
+    handler: src/handlers/handlerToken.createToken
+    events:
+      - httpApi:
+          path: /create
+          method: post
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
