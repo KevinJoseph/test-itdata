@@ -1,13 +1,25 @@
 import { MongoDbServiceInterface } from './MongoDbServiceInterface';
-import { Mongoose, connect } from 'mongoose';
+import { connect } from 'mongoose';
 import { MongoDbConfig } from '../../config/db';
 
 export class MongoDbService implements MongoDbServiceInterface {
-  constructor(private readonly config: MongoDbConfig) {
-    config.load();
+  public config: MongoDbConfig;
+
+  constructor() {
+    this.config = new MongoDbConfig();
+    this.config.load();
   }
 
-  async connect(): Promise<Mongoose> {
-    return await connect(this.config.mongoUrl);
+  connect(): void {
+    const con = connect(this.config.mongoUrl);
+    con
+      .then(() => {
+        console.log('[+] Database connected with Atlas Cluster');
+        return true;
+      })
+      .catch((err) => {
+        console.log(err);
+        return false;
+      });
   }
 }
