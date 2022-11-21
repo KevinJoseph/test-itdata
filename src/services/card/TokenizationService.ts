@@ -1,12 +1,15 @@
 import { encode, TAlgorithm } from 'jwt-simple';
-import { CardRepositoryInterface } from '../../repository/card/CardRepositoryInterface';
 import { Card } from '../../enity/Card';
 import { CardSession } from '../../enity/CardSession';
 import { Token } from '../../enity/Token';
 import { TokenizationServiceInterface } from './TokenizationServiceInterface';
+import { CardRepository } from '../../repository/card/CardRepository';
 
 export class TokenizationService implements TokenizationServiceInterface {
-  constructor(private readonly repository: CardRepositoryInterface) {}
+  public repository: CardRepository;
+  constructor() {
+    this.repository = new CardRepository();
+  }
 
   tokenizeCard(card: Card): Token {
     const algorithm: TAlgorithm = 'HS512';
