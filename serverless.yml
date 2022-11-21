@@ -1,0 +1,19 @@
+service: testITDATA
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  hello:
+    handler: src/handlers/handlerHello.hello
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
