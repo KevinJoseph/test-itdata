@@ -7,12 +7,6 @@ provider:
   lambdaHashingVersion: 20201221
 
 functions:
-  hello:
-    handler: src/handlers/handlerHello.hello
-    events:
-      - httpApi:
-          path: /hello
-          method: get
   createToken:
     handler: src/handlers/handlerToken.createToken
     events:
