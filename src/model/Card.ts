@@ -1,10 +1,5 @@
 import { Schema, model } from 'mongoose';
 import { Card } from '../enity/Card';
-import { cardValidator } from '../validator/CardValidator';
-import { cvvValidator } from '../validator/CVVValidator';
-import { emailValidator } from '../validator/EmailValidator';
-import { monthValidator } from '../validator/MonthValidator';
-import { yearValidator } from '../validator/YearValidator';
 
 const CardSchema = new Schema<Card>({
   email: {
